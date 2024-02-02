@@ -1,6 +1,6 @@
 :root {
   --body-bg: #123;
-  --nav-bg: #rgb(69, 92, 115);
+  --nav-bg: rgb(69, 92, 115);
 }
 
 * {
@@ -12,6 +12,7 @@ html {
 }
 
 body {
+  min-height: 200vh;
   margin: 0;
   font-size: 1.25rem;
   background: var(--body-bg);
@@ -21,3 +22,35 @@ body {
   gap: 2rem;
 }
 
+nav {
+  position: sticky;
+  top: 0;
+  max-height: 100svh;
+  background-color: var(--nav-bg);
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  gap: 4rem;
+  padding-block: 2rem;
+  font-size: 2rem;
+}
+
+.nav-list li {
+  padding: 1rem 2rem;
+  margin-left: 2rem;
+  border-radius: 100vw 0 0 100vw;
+}
+
+.nav-list li.active {
+  background: red;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+}
