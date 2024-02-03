@@ -47,8 +47,26 @@ nav {
 }
 
 .nav-list li.active {
+  view-transition-name: activeNavTab;
   background: var(--body-bg);
   position: relative;
+}
+
+.nav-list li:nth-child(1) a {
+  view-transition-name: navLink_1;
+}
+
+.nav-list li:nth-child(2) a {
+  view-transition-name: navLink_2;
+}
+
+.nav-list li:nth-child(3) a {
+  view-transition-name: navLink_3;
+}
+
+::view-transition-group(activeNavTab) {
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
 }
 
 .nav-list li.active::before,
@@ -78,5 +96,8 @@ nav {
 
 .nav-list a {
   color: white;
+  display: block;
   text-decoration: none;
+  position: relative;
+  z-index: 10;
 }
